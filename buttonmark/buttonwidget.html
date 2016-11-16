@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>按钮小组件</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+    <link rel="stylesheet" href="../css/themes/default/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="../_assets/css/jqm-demos.css">
+    <script src="../js/jquery.js"></script>
+    <script src="../_assets/js/index.js"></script>
+    <script src="../js/jquery.mobile-1.4.5.min.js"></script>
+
+    <style>
+        #custom-border-radius .ui-btn-icon-notext.ui-corner-all {
+            -webkit-border-radius: .3125em;
+            border-radius: .3125em;
+        }
+    </style>
+</head>
+<body>
+<div role="main" class="constants">
+
+<h1> checkbox 使用时需要使用  input type ="checkbox" 属性 而且需要在控件外层包裹一个label</h1>
+<h1> 当然也可以不包裹 ,但是要babel lable for="checkcox-mini-0">I agree</h1>
+<code>即 babel 标签要指向 checkbox 的ID</code>
+
+<h2>CheckBox</h2>
+<form>
+        <label>
+            <input type="checkbox" name="checkbox-0 ">Check me
+        </label>
+</form>
+<h2>Mini</h2>
+<form>
+        <input type="checkbox" name="checkbox-mini-0" id="checkbox-mini-0" data-mini="true">
+        <label for="checkbox-mini-0">I agree</label>
+</form>
+<h2>checkbox 组</h2>
+<code>fieldset data-role="controlgroup"</code>
+<code>legend>Vertical:竖直方向</code>
+<form>
+        <fieldset data-role="controlgroup" >
+            <legend>Vertical:</legend>
+            <input type="checkbox" name="checkbox-v-2a" id="checkbox-v-2a">
+            <label for="checkbox-v-2a">One</label>
+            <input type="checkbox" name="checkbox-v-2b" id="checkbox-v-2b">
+            <label for="checkbox-v-2b">Two</label>
+            <input type="checkbox" name="checkbox-v-2c" id="checkbox-v-2c">
+            <label for="checkbox-v-2c">Three</label>
+        </fieldset>
+</form>
+<h2> data-type ="horizontal"</h2>
+<code> 通过对比发现 fieldset 中 data-type="horizontal"  控制 横树的排列而里面 legend 翻译 传说,传奇任务,图例,铭文 :标签就是整个复选框的标题 </code>
+<form>
+        <fieldset data-role="controlgroup" data-type="horizontal">
+            <legend>Horizontal:</legend>
+            <input type="checkbox" name="checkbox-h-2a" id="checkbox-h-2a">
+            <label for="checkbox-h-2a">One</label>
+            <input type="checkbox" name="checkbox-h-2b" id="checkbox-h-2b">
+            <label for="checkbox-h-2b">Two</label>
+            <input type="checkbox" name="checkbox-h-2c" id="checkbox-h-2c">
+            <label for="checkbox-h-2c">Three</label>
+        </fieldset>
+</form>
+<h2>Icon position</h2>
+<code>跟 Button 类似 在相应的位置添加 position 就行 给ckeckbox组设置复选框位置 在 fieldset 添加 data-iconpos="rignt"</code>
+<form>
+        <fieldset data-role="controlgroup" data-iconpos="right">
+            <legend>Icon right:</legend>
+            <input type="checkbox" name="checkbox-h-6a" id="checkbox-h-6a">
+            <label for="checkbox-h-6a">One</label>
+            <input type="checkbox" name="checkbox-h-6b" id="checkbox-h-6b">
+            <label for="checkbox-h-6b">Two</label>
+            <input type="checkbox" name="checkbox-h-6c" id="checkbox-h-6c">
+            <label for="checkbox-h-6c">Three</label>
+        </fieldset>
+    </form>
+<h2>Theme 主题</h2>
+<code>一切都是那么类似,在checkbox 后面最佳 data-theme即可</code>
+<form >
+        <fieldset data-role="controlgroup">
+            <legend>Swatch B:</legend>
+            <input type="checkbox" name="checkbox-t-2a" id="checkbox-t-2a" data-theme="a">
+            <label for="checkbox-t-2a">Theme A</label>
+            <input type="checkbox" name="checkbox-t-2b" id="checkbox-t-2b" data-theme="b">
+            <label for="checkbox-t-2b">Theme B</label>
+            <input type="checkbox" name="checkbox-t-2c" id="checkbox-t-2c" data-theme="c">
+            <label for="checkbox-t-2c">Theme C</label>
+            <input type="checkbox" name="checkbox-t-2d" id="checkbox-t-2d" data-theme="d">
+            <label for="checkbox-t-2d">Theme D</label>
+            <input type="checkbox" name="checkbox-t-2e" id="checkbox-t-2e" data-theme="e">
+            <label for="checkbox-t-2e">Thme E</label>
+
+        </fieldset>
+</form>
+    <code>不知道上面主题为什么不生效,原来下面的写法也没生效</code>
+    <div data-role="content">
+        <div class="ui-body ui-body-a"><h4>Swatch "a"</h4><a href="#" data-role="button">Button</a></div>
+        <div class="ui-body ui-body-b"><h4>Swatch "b"</h4><a href="#" data-role="button">Button</a></div>
+        <div class="ui-body ui-body-c"><h4>Swatch "c"</h4><a href="#" data-role="button">Button</a></div>
+        <div class="ui-body ui-body-d"><h4>Swatch "d"</h4><a href="#" data-role="button">Button</a></div>
+        <div class="ui-body ui-body-e"><h4>Swatch "e"</h4><a href="#" data-role="button">Button</a></div>
+    </div>
+    <h2>disable</h2>
+    <form>
+            <input disabled="" type="checkbox" name="checkbox-t-3a" id="checkbox-t-3a" data-theme="a">
+            <label for="checkbox-t-3a">One</label>
+    </form>
+    <h2>enhanced xiefabuyiyang</h2>
+    <div class="ui-checkbox">
+            <label for="checkbox-enhanced" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off">I agree</label>
+            <input type="checkbox" name="checkbox-enhanced" id="checkbox-enhanced" data-enhanced="true">
+    </div>
+</div>
+</body>
+</html>
