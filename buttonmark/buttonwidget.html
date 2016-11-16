@@ -19,6 +19,27 @@
             border-radius: .3125em;
         }
     </style>
+    <script>
+        $( document ).on( "pagecreate", function() {
+            var nextId = 1;
+
+            $("#add").click(function() {
+                nextId++;
+                var content = "<div data-role='collapsible' id='set" + nextId + "'><h3>Section " + nextId + "</h3><p>I am the collapsible content in a set so this feels like an accordion. I am hidden by default because I have the 'collapsed' state; you need to expand the header to see me.</p></div>";
+
+                $( "#set" ).append( content ).collapsibleset( "refresh" );
+            });
+
+            $( "#expand" ).click(function() {
+                $("#set").children(":last").collapsible( "expand" );
+            });
+
+            $( "#collapse" ).click(function() {
+                $( "#set" ).children( ":last" ).collapsible( "collapse" );
+            });
+        });
+    </script>
+
 </head>
 <body>
 <div role="main" class="constants">
@@ -114,6 +135,96 @@
             <label for="checkbox-enhanced" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off">I agree</label>
             <input type="checkbox" name="checkbox-enhanced" id="checkbox-enhanced" data-enhanced="true">
     </div>
+    <h1>radio Checkbox</h1>
+    <code>radio 跟上面类似 只不过 上面是复选框 而radio checkbox 是单选框 所以神马都不需要改变  只需要将 input type 换成type="radio"即可</code>
+    <form>
+            <fieldset data-role="controlgroup" data-iconpos="right">
+                <legend>Vertical, icon right:</legend>
+                <input type="radio" name="radio-choice-w-6" id="radio-choice-w-6a" value="on" checked="checked">
+                <label for="radio-choice-w-6a">One</label>
+                <input type="radio" name="radio-choice-w-6" id="radio-choice-w-6b" value="off">
+                <label for="radio-choice-w-6b">Two</label>
+                <input type="radio" name="radio-choice-w-6" id="radio-choice-w-6c" value="other">
+                <label for="radio-choice-w-6c">Three</label>
+            </fieldset>
+    </form>
+</div>
+<h1>Collapsible可折叠的</h1>
+<code> div  data-role="collapsible"</code>
+<div data-role="collapsible">
+        <h4>Heading</h4>
+        <p>I'm the collapsible content. By default I'm closed, but you can click the header to open me.</p>
+</div>
+<h2>带主题B</h2>
+<div data-role="collapsible" data-theme="b" data-content-theme="b">
+        <h4>Heading</h4>
+        <p>I'm the collapsible content with a themed content block set to "b".</p>
+</div>
+<h2>带主题c</h2>
+<div data-role="collapsible" data-theme="c" data-content-theme="c">
+        <h4>Heading</h4>
+        <p>I'm the collapsible content with a themed content block set to "c".</p>
+</div>
+<h2>带主题d</h2>
+<div data-role="collapsible" data-theme="d" data-content-theme="d">
+        <h4>Heading</h4>
+        <p>I'm the collapsible content with a themed content block set to "d".</p>
+</div>
+<h2> data-collapsed ="false" 列表处于展开状态</h2>
+<div data-role="collapsible" data-collapsed="false">
+        <h4>Heading</h4>
+        <ul data-role="listview">
+            <li><a href="#">List item 1</a></li>
+            <li><a href="#">List item 2</a></li>
+            <li><a href="#">List item 3</a></li>
+        </ul>
+</div>
+<h2> data-collapsed ="true"</h2>
+<div data-role="collapsible" data-collapsed="true">
+        <h4>Heading</h4>
+        <ul data-role="listview">
+            <li><a href="#">List item 1</a></li>
+            <li><a href="#">List item 2</a></li>
+            <li><a href="#">List item 3</a></li>
+        </ul>
+</div>
+<h2>data-collaosed-icon 与data-expanded-icon 即内容展开时的图片 carat-d carat-down carat-u carat-up 系统自带向下和向上的图标 </h2>
+<div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+        <h4>Heading</h4>
+        <ul data-role="listview" data-inset="false">
+            <li>Read-only list item 1</li>
+            <li>Read-only list item 2</li>
+            <li>Read-only list item 3</li>
+        </ul>
+</div>
+<h2>隐藏</h2>
+<code>下面这个展开效果一个是由data-inset="false" 控制 一般包括头部 和内容 头部显示head 内容可以p标签包裹卸载下面</code>
+<div data-role="collapsible" data-enhanced="true" class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-collapsed">
+        <h4 class="ui-collapsible-heading ui-collapsible-heading-collapsed">
+            <a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-icon-plus">
+            Heading
+            <div class="ui-collapsible-heading-status"> click to expand contents</div>
+            </a>
+        </h4>
+        <div class="ui-collapsible-content ui-collapsible-content-collapsed" aria-hidden="true">
+        <p>I'm the collapsible content. By default I'm closed, but you can click the header to open me.</p>
+        </div>
+</div>
+<div data-role="collapsible" data-inset="false">
+        <h4>Heading</h4>
+        <p>I'm the collapsible content. By default I'm closed, but you can click the header to open me.</p>
 </div>
 </body>
+<h1>dynamic collapsible 动态的 可折叠的</h1>
+<code> 就是写了一个js方法 。在ID= add 写添加方法而已</code>
+<button type="button" data-icon="gear" data-iconpos="right" data-mini="true" data-inline="true" id="add">Add</button>
+<button type="button" data-icon="plus" data-iconpos="right" data-mini="true" data-inline="true" id="expand">Expand last</button>
+<button type="button" data-icon="minus" data-iconpos="right" data-mini="true" data-inline="true" id="collapse">Collapse last</button>
+<div data-role="collapsibleset" data-content-theme="a" data-iconpos="right" id="set">
+        <div data-role="collapsible" id="set1" data-collapsed="true">
+            <h3>啊洗吧 </h3>
+            <p>I'm the collapsible content.</p>
+        </div>
+</div>
+
 </html>
