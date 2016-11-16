@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!doctype html>
+<html>
+<head>
+     <meta charset="UTF-8">
+    <title>按钮</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+    <link rel="stylesheet" href="../css/themes/default/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="../_assets/css/jqm-demos.css">
+    <script src="../js/jquery.js"></script>
+    <script src="../_assets/js/index.js"></script>
+    <script src="../js/jquery.mobile-1.4.5.min.js"></script>
+    <style>
+        /** 图标大小 **/
+        .user-ui-btn .ui-iconb{
+            width:36px;
+            height:36px;
+        }
+        /** 设置字体大小，由于图标变大，所以文字适当的调大一些 **/
+        .user-ui-btn .ui-btn-text{
+            line-height:36px;
+            font-size:20px;
+        }
+        /** 无文字按钮 **/
+        .user-ui-btn .ui-btn-icon-notext{
+            width:42px;
+            height:42px;
+            webkit-border-radius: 2em;
+            border-radius: 2em;
+        }
+        /** 图标左边 **/
+        .user-ui-btn .ui-btn-icon-left .ui-btn-inner {
+            padding-left: 50px;
+        }
+        .user-ui-btn .ui-btn-icon-left .ui-icon{
+            left:10px;
+            margin-top: -18px;
+        }
+        /** 图标在右边 **/
+        .user-ui-btn .ui-btn-icon-right .ui-btn-inner {
+            padding-right: 50px;
+        }
+        .user-ui-btn .ui-btn-icon-right .ui-icon{
+            right:10px;
+            margin-top: -18px;
+        }
+        /** 图标在上边 **/
+        .user-ui-btn .ui-btn-icon-top .ui-btn-inner {
+            padding-top: 50px;
+        }
+        .user-ui-btn .ui-btn-icon-top .ui-icon{
+            top:10px;
+            margin-left: -18px;
+        }
+        /** 图标在下边 **/
+        .user-ui-btn .ui-btn-icon-bottom .ui-btn-inner {
+            padding-bottom: 50px;
+        }
+        .user-ui-btn .ui-btn-icon-bottom .ui-icon{
+            bottom:10px;
+            margin-left: -18px;
+        }
+        /** 定义自己的图标 **/
+        .user-ui-btn .ui-icon-demo1{
+            background:url('../img/love_heart_16px_1131800_easyicon.net.png') no-repeat -108px 0px;
+        }
+        .user-ui-btn .ui-icon-demo2{
+            background:url('../img/love_heart_24px_1131800_easyicon.net.png') no-repeat -180px -180px;
+        }
+        .user-ui-btn .ui-icon-demo3{
+            background:url('../img/love_gift_box_32px_1131798_easyicon.net.png') no-repeat -252px -360px;
+        }
+        .user-ui-btn .ui-icon-demo4{
+            background:url('../img/love_heart_32px_1131800_easyicon.net.png') no-repeat -36px -180px;
+        }
+        .user-ui-btn .ui-icon-demo5{
+            background:url('../img/heart.png') no-repeat -504px -612px;
+        }
+    </style>
+</head>
+<body>
+<div data-role="page" id="page">
+     <div data-role="header">
+      <h1>Jquery Mobile自定义按钮</h1>
+     </div>
+     <div data-role="content">
+      <h2>原版样式举例</h2>
+      <div>
+     <a href="#" data-role="button" data-icon="home" data-inline="true" data-iconpos="left">DEMO</a>
+     <a href="#" data-role="button" data-icon="home" data-inline="true" data-iconpos="top">DEMO</a>
+     <a href="#" data-role="button" data-icon="home" data-inline="true" data-iconpos="right">DEMO</a>
+     <a href="#" data-role="button" data-icon="home" data-inline="true" data-iconpos="bottom">DEMO</a>
+     <a href="#" data-role="button" data-icon="home" data-inline="true" data-iconpos="notext">DEMO</a>
+     </div>
+     <h2>自定义样式举例</h2>
+     <h3>1）普通按钮</h3>
+     <div class="user-ui-btn">
+     <a class="user-ui-btn" href="#" data-role="button" data-icon="demo1" data-inline="true" >no iconpos</a>
+     <a class="user-ui-btn" href="#" data-role="button" data-icon="demo2" data-inline="true" data-iconpos="top">iconpos top</a>
+     <a class="user-ui-btn" href="#" data-role="button" data-icon="demo3" data-inline="true" data-iconpos="right">DEMO</a>
+     <a class="user-ui-btn" href="#" data-role="button" data-icon="demo4" data-inline="true" data-iconpos="bottom">DEMO</a>
+     <a class="user-ui-btn" href="#" data-role="button" data-icon="demo5" data-inline="true" data-iconpos="notext">DEMO</a>
+     </div>
+     <h3>2）按钮组</h3>
+     <div class="user-ui-btn" data-role="controlgroup" data-type="horizontal">
+       <a data-role="button" data-icon="demo1" data-iconpos="top">js</a>
+       <a data-role="button" data-icon="demo2" data-iconpos="top">css</a>
+       <a data-role="button" data-icon="demo3" data-iconpos="top">html</a>
+       <a data-role="button" data-icon="demo4" data-iconpos="top">ps</a>
+      </div>
+     <div class="user-ui-btn" data-role="controlgroup">
+       <a data-role="button" data-icon="demo1" data-iconpos="top">js</a>
+       <a data-role="button" data-icon="demo2" data-iconpos="top">css</a>
+       <a data-role="button" data-icon="demo3" data-iconpos="top">html</a>
+       <a data-role="button" data-icon="demo4" data-iconpos="top">ps</a>
+      </div>
+     <h3>3）原始icon</h3>
+     <img src="../img/love_heart_24px_1131800_easyicon.net.png" alt="原始icon" border=0 width=612 height=648>
+     </div>
+     <div data-role="footer">
+      <h4>Copyright by lining</h4>
+     </div>
+    <a class="user-ui-btn ui-icon">hhah</a>
+</div>
+</body>
+</html>
