@@ -72,5 +72,130 @@
                 </tr>
         </tbody>
         </table>
+
+<h2>data-filtertext</h2>
+<code>一样的表格一样的controlgroup,只需要在item里面加 data-filtertext="some text"那么 那个item 你就搜索不到</code>
+<form>
+        <input data-type="search" id="filterControlgroup-input">
+</form>
+<div data-role="controlgroup" data-filter="true" data-input="#filterControlgroup-input">
+        <a href="#" class="ui-btn ui-shadow ui-corner-all">Button 1</a>
+        <a href="#" class="ui-btn ui-shadow ui-corner-all">Button 2</a>
+        <a href="#" class="ui-btn ui-shadow ui-corner-all" data-filtertext="some text">Button 3</a>
+        <a href="#" class="ui-btn ui-shadow ui-corner-all">Button 4</a>
+        <a href="#" class="ui-btn ui-shadow ui-corner-all">Button 5</a>
+</div>
+
+<h2> 过滤嵌套折叠,不能搜子类</h2>
+<form>
+        <input data-type="search" id="searchForCollapsibleSet">
+</form>
+    <div data-role="collapsibleset" data-filter="true" data-inset="true" id="collapsiblesetForFilter" data-input="#searchForCollapsibleSet">
+            <div data-role="collapsible" data-filtertext="Animals">
+                <h3>Animals</h3>
+                <ul data-role="listview" data-inset="false">
+                    <li>Cats</li>
+                    <li>Dogs</li>
+                    <li>Lizards</li>
+                    <li>Snakes</li>
+                </ul>
+            </div>
+            <div data-role="collapsible" data-filtertext="Cars">
+                <h3>Cars</h3>
+                <ul data-role="listview" data-inset="false">
+                    <li>Acura</li>
+                    <li>Audi</li>
+                    <li>BMW</li>
+                    <li>Cadillac</li>
+                </ul>
+            </div>
+            <div data-role="collapsible" data-filtertext="Planets">
+                <h3>Planets</h3>
+                <ul data-role="listview" data-inset="false">
+                    <li>Earth</li>
+                    <li>Jupiter</li>
+                    <li>Mars</li>
+                    <li>Mercury</li>
+                </ul>
+            </div>
+        </div>
+
+<form>
+
+    <h2>嵌套可搜索子类</h2>
+        <input data-type="search" id="searchForCollapsibleSetChildren">
+</form>
+    <div data-role="collapsibleset" data-filter="true" data-children="> div, > div div ul li" data-inset="true" id="collapsiblesetForFilterChildren" data-input="#searchForCollapsibleSetChildren">
+            <div data-role="collapsible" data-filtertext="Animals Cats Dogs Lizards snakes">
+                <h3>Animals</h3>
+                <ul data-role="listview" data-inset="false">
+                    <li data-filtertext="Animals Cats">Cats</li>
+                    <li data-filtertext="Animals Dogs">Dogs</li>
+                    <li data-filtertext="Animals Lizards">Lizards</li>
+                    <li data-filtertext="Animals Snakes">Snakes</li>
+                </ul>
+            </div>
+            <div data-role="collapsible" data-filtertext="Cars Acura Audi BMW Cadillac">
+                <h3>Cars</h3>
+                <ul data-role="listview" data-inset="false">
+                    <li data-filtertext="Cars Acura">Acura</li>
+                    <li data-filtertext="Cars Audi">Audi</li>
+                    <li data-filtertext="Cars BMW">BMW</li>
+                    <li data-filtertext="Cars Cadillac">Cadillac</li>
+                </ul>
+            </div>
+            <div data-role="collapsible" data-filtertext="Planets Earth Jupiter Mars Mercury">
+                <h3>Planets</h3>
+                <ul data-role="listview" data-inset="false">
+                    <li data-filtertext="Planets Acura">Earth</li>
+                    <li data-filtertext="Planets Jupiter">Jupiter</li>
+                    <li data-filtertext="Planets Mars">Mars</li>
+                    <li data-filtertext="Planets Mercury">Mercury</li>
+                </ul>
+            </div>
+        </div>
+<h2>过滤所有东西</h2>
+<form>
+        <input data-type="search" id="divOfPs-input">
+</form>
+<div class="elements" data-filter="true" data-input="#divOfPs-input">
+    <p><strong>These</strong> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam</p>
+    <p><strong>tags</strong> nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam</p>
+    <p><strong>Tags</strong> erat, sed diam voluptua. At vero eos et accusam et justo duo dolores </p>
+    <p><strong>are</strong> et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est</p>
+    <p><strong>Filterable</strong> Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur</p>
+</div>
+<h2>默认填充</h2>
+<code> data-filter-placeholder="文字"</code>
+<ul data-role="listview" data-filter="true" data-filter-placeholder="Find cars..." data-filter-theme="a" data-inset="true">
+        <li>Acura</li>
+        <li>Audi</li>
+        <li>BMW</li>
+        <li>Cadillac</li>
+        <li>Ferrari</li>
+</ul>
+<h2>搜索</h2>
+<ul data-role="listview" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Search fruits..." data-inset="true">
+        <li><a href="#">Apple</a></li>
+        <li><a href="#">Banana</a></li>
+        <li><a href="#">Cherry</a></li>
+        <li><a href="#">Cranberry</a></li>
+        <li><a href="#">Grape</a></li>
+        <li><a href="#">Orange</a></li>
+</ul>
+<h2>搜索item</h2>
+
+<form>
+        <div class="ui-input-search ui-body-inherit ui-corner-all ui-shadow-inset ui-input-has-clear">
+            <input data-type="search" data-enhanced="true" data-inset="false" id="pre-rendered-example-input" placeholder="Filter items..." value="au">
+        </div>
+        <div data-role="controlgroup" data-enhanced="true" data-filter="true" data-filter-reveal="true" data-input="#pre-rendered-example-input" class="ui-controlgroup ui-controlgroup-vertical ui-corner-all">
+            <div class="ui-controlgroup-controls">
+                <a href="#" class="ui-btn ui-corner-all ui-shadow ui-shadow ui-screen-hidden">Acura</a>
+                <a href="#" class="ui-btn ui-corner-all ui-shadow ui-first-child ui-shadow ui-last-child">Renault</a>
+                <a href="#" class="ui-btn ui-corner-all ui-shadow ui-shadow ui-screen-hidden">Hyundai</a>
+            </div>
+        </div>
+</form>
 、</body>
 </html>
