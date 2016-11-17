@@ -124,8 +124,32 @@
 </script>
 </head>
 <body>
- <h2> 滑动删除列表元素</h2>
- <div data-role="page" id="demo-page" data-title="Inbox" data-url="demo-page">
+ <div  data-role="page" id="demo-intro" class="jqm-demos">
+     <h1> 滑动删除列表元素</h1>
+
+     <a href="http://blog.sina.com.cn/s/blog_5cd7f5b40101h6hj.html">关于css</a>
+     <code>div data-role="page" id="demo-page" data-title="Inbox" data-url="demo-page"></code>
+     <code>头部</code>
+     <code>     div data-role="header" data-position="fixed" data-theme="b"></code>
+     <code>正文</code>
+     <code> div role="main" class="ui-content"</code>
+     <code>     ul id="list" class="touch" data-role="listview" data-icon="false" data-split-icon="delete"</code>
+     <code>             li</code>
+     <code>                     a href="#demo-mail"></code>
+     <code>                         h3>Avery Walker></code>
+     <code>                         p class="topic">strong>Re: Dinner Tonight/strong>/p></code>
+     <code>                         p>Sure, let's plan on meeting at Highland Kitchen at 8:00 tonight. Can't wait!</code>
+     <code>                         p class="ui-li-aside">strong>4:48trong>PM</p></code>
+     <code>                     a href="#" class="delete">Deletea></code>
+     <code>确定</code>
+     <code>   div id="confirm" class="ui-content" data-role="popup" data-theme="a</code>
+     <code></code>
+     <code>$( document ).on( "pagecreate", "#demo-page", function() {}这是本例中js事件 </code>
+     <code>pagecreate是在页面创建成功之后，触发的事件, 但在 jQuery Mobile 完成页面增强之前。类似有pagebeforecreate - 在页面初始化后触发, 但是在页面增强之前。pageinit - 在页面已经完全初始化及完成增强后触发。</code>
+     <code>"#demo-page"是页面id</code>
+     <code> $( document ).on( "swipeleft swiperight", "#list li", function( event ) {</code>
+     <code> swipeleft swiperight 是系统的事件,跟pagecreate 类似 然后指定ID list li 使用 event.target 属性返回swipeleft事件触发的DOM元素。</code>
+     <code>然后就是相关逻辑处理</code>
          <div data-role="header" data-position="fixed" data-theme="b">
              <h1>Inbox</h1>
              <a href="#" data-rel="back" data-icon="carat-l" data-iconpos="notext">Back</a>
@@ -274,28 +298,6 @@
          </div><!-- /popup -->
  </div>
 
- <a href="http://blog.sina.com.cn/s/blog_5cd7f5b40101h6hj.html">关于css</a>
- <code>div data-role="page" id="demo-page" data-title="Inbox" data-url="demo-page"></code>
- <code>头部</code>
- <code>     div data-role="header" data-position="fixed" data-theme="b"></code>
- <code>正文</code>
- <code> div role="main" class="ui-content"</code>
- <code>     ul id="list" class="touch" data-role="listview" data-icon="false" data-split-icon="delete"</code>
- <code>             li</code>
- <code>                     a href="#demo-mail"></code>
- <code>                         h3>Avery Walker></code>
- <code>                         p class="topic">strong>Re: Dinner Tonight/strong>/p></code>
- <code>                         p>Sure, let's plan on meeting at Highland Kitchen at 8:00 tonight. Can't wait!</code>
- <code>                         p class="ui-li-aside">strong>4:48trong>PM</p></code>
- <code>                     a href="#" class="delete">Deletea></code>
- <code>确定</code>
- <code>   div id="confirm" class="ui-content" data-role="popup" data-theme="a</code>
- <code></code>
-<code>$( document ).on( "pagecreate", "#demo-page", function() {}这是本例中js事件 </code>
-<code>pagecreate是在页面创建成功之后，触发的事件, 但在 jQuery Mobile 完成页面增强之前。类似有pagebeforecreate - 在页面初始化后触发, 但是在页面增强之前。pageinit - 在页面已经完全初始化及完成增强后触发。</code>
-<code>"#demo-page"是页面id</code>
-<code> $( document ).on( "swipeleft swiperight", "#list li", function( event ) {</code>
-<code> swipeleft swiperight 是系统的事件,跟pagecreate 类似 然后指定ID list li 使用 event.target 属性返回swipeleft事件触发的DOM元素。</code>
-<code>然后就是相关逻辑处理</code>
+
 </body>
 </html>
