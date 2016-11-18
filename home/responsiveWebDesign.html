@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自适应网页设计</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+    <link rel="stylesheet" href="../css/themes/default/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="../_assets/css/jqm-demos.css">
+    <script src="../js/jquery.js"></script>
+    <script src="../_assets/js/index.js"></script>
+    <script src="../js/jquery.mobile-1.4.5.min.js"></script>
+
+</head>
+<body>
+<code>Responsive web design (RWD) is a design and technical approach that aims to adapt the layout and interaction of a site or app to work optimally across a wide range of device resolutions, screen densities and interaction modes with the same underlying codebase. The framework has a number of responsive widgets: responsive grids, reflow tables and column chooser tables, and panels.</code>
+<code>响应网页设计（RWD）是一种设计和技术方法，以适应一个网站或应用程序的优化工作在很宽的范围内的设备分辨率的布局和交互，屏幕密度和互动模式具有相同的基础代码库。该框架有很多敏感的部件：grids,reflow tables和column表和panel。</code>
+<h2>RWD basics</h2>
+<code>自适应网页设计基础</code>
+<code>RWD has three key elements:</code>
+     <code>CSS media queries, used to target styles to specific device characteristics such as screen width breakpoint or resolution.</code>
+   <code>A fluid grid, that specifies elements and widgets in flexible units with the goal of making them flow to fill their containers.
+       Flexible images and media, are also sized in relative units so they re-size to fit within their containers</code>
+<code>我们有三个关键要素：</code>
+<code>CSS媒体查询，用于目标风格的特定设备特性如断点或分辨率的屏幕宽度。</code>
+<code>一个流体网格，它指定在柔性单元中的元素和部件，它们的目标是使它们的流动来填充它们的容器。</code>
+<code>灵活的图像和媒体，也大小在相对单位，所以他们重新大小，以适应他们的容器内。</code>
+
+<h2>Progressive Enhancement</h2>
+<code>渐进增强</code>
+<p><code>In addition to these three core RWD principles, we advocate following progressive enhancement (PE) practices. This means always starting with semantic HTML which will work on any device, then unobtrusively layering in advanced CSS and JS only for capable browsers. This provides a solid foundation for the device-level optimizations that RWD provides and is how the jQuery Mobile library is built</code></p>
+<p><code>除了这三个核心RWD的原则，我们主张以下渐进增强（PE）的做法。这意味着从语义的HTML，将工作在任何设备上，然后悄悄地分层高级CSS和JS只有功能的浏览器。这提供了该装置的优化，我们提供了一个坚实的基础，是多么的jQuery移动图书馆建</code></p>
+<h2>Responsive & Responsible</h2>
+<code>响应和负责任的</code>
+<p><code>When working with RWD, it's very important to consider performance to ensure that you're not simply taking a heavy desktop site and shrinking it down to mobile screens. We recommend following a "mobile-first" approach to keep development focused on reducing bandwidth, server requests and optimizing source order.</code></p>
+<p><code>工作与RWD时，其考虑的性能确保你不只是以沉重的桌面网站，它缩小到手机屏幕是非常重要的。我们建议遵循一个“mobile first”的方法来保持开发重点放在减少带宽，服务器请求和优化源代码。</code></p>
+<p><code>When building a page, start by creating the lightest and most semantic HTML possible. Think about how the source order of the markup would work if you didn't have CSS or JS. Do not include code that is only needed for larger viewports and hide it at smaller widths. Instead, use Ajax to conditionally load these assets when larger screens are detected via JS</code></p>
+<p><code>在创建页面时，首先创建最轻和最可能的语义的HTML。思考如何标记源会工作，如果你没有CSS和JS。不包括只需要较大的视口，它藏在宽度较小的代码。相反，使用Ajax技术条件加载这些资产时，更大的屏幕检测通过js</code></p>
+<p><code>When writing CSS for a responsive site or app, it's usually most efficient to write all the core typography and basic style elements outside of a media query to form the styles for the smallest devices, such as phones. This is a good approach because the majority of these core styles are usually also shared at greater widths, albeit in a different layout and it leverages the cascading power of CSS. Build up breakpoints using multiple <strong>min-width</strong> media queries to layer in additional style rules that should only apply above a certain screen width.</code></p>
+<p><code>当写CSS响应的网站或应用程序，编写所有的核心字体和基本风格元素一个媒体查询形成风格为最小的设备外，通常是最有效的，如手机。这是一个很好的方法，因为这些核心大多数风格通常也更宽的共享的，尽管在不同的布局和利用CSS级联功率。使用多个<strong>min-Width</strong>，以层在额外的样式规则，应该只适用于一定的屏幕宽度。</code></p>
+<p><code>For images in your pages, we recommend starting with images sized for mobile screens in the markup. It doesn't make sense to serve a 1,000 pixel wide photo to a smartphone with a 480 pixel max resolution because this is a waste of bandwidth and memory. Instead, include an image targeted for a mobile size. Add a <strong>width: 100%</strong> ; style rule to make images scale to the page or container, but not larger because this would look blurry.</code></p>
+<p><code>对于在您的页面中的图像，我们建议从在标记中的移动屏幕大小的图像开始。这是没有意义的服务一个1000像素宽的照片，以智能手机与一个480像素的最大分辨率，因为这是一个带宽和内存的浪费。相反，包括针对移动大小的图像。添加一个<strong>width: 100%</strong>样式规则，使图像尺度到页面或容器，但不大，因为这将看起来模糊。</code></p>
+<p><code>For larger or higher resolution screens, there is a wide range of JS-based techniques and services to conditionally load a higher quality image. The forthcoming <strong>picture</strong> element will address the need to handle multiple image sources natively in HTML and can be used today with a polyfill script.</code></p>
+<p><code>对于较大的或更高分辨率的屏幕，有一个广泛的基于js的技术和服务条件负荷更高质量的图像。即将到来的<strong>picture</strong>元素将需要处理多个图像来源于HTML和可与polyfill脚本的今天。</code></p>
+<p><code>Always look for ways to limit the number of server requests on a page by concatenating files into a single request and always use minification and compression (gzip).</code></p>
+<p><code>总是寻找通过串联文件到一个单一的请求，总是使用压缩和压缩限制在网页服务器的请求数的方法（gzip）。</code></p>
+
+<h2>Responsive in jQuery Mobile</h2>
+<code>jQuery Mobile响应</code>
+<code>jQuery Mobile has always been designed to work within a responsive context and our docs and forms had a few responsive elements from the very start. All the widgets are built to be 100% flexible in width to fit easily inside any responsive layout system you choose to build.
+    Here is a checklist of RWD tips to keep in mind:</code>
+<code>jQuery Mobile一直在响应的语境和我们的文档和表格的工作有一些反应元件从一开始。所有的小部件都是内置的100%个灵活的宽度，以适应任何响应的布局系统，你选择建立。
+    这里是一份清单，后轮驱动的提示：</code>
+<code>Create a style override stylesheet and include it after the jQuery Mobile framework stylesheet. This will hold all your custom styles, tweaks to the default widgets and media queries.
+    Start by writing the styles you want to see at the narrowest screen width (i.e. "mobile first"). These should be outside a media query. This mobile-first approach is efficient because you can lay down the core typography, colors and styles for mobile knowing that these tend to also be used for wider breakpoints.
+    Choose the breakpoints based on your content, not a specific device. Since there are devices of every imaginable width, it's smarter to choose breakpoints based on how your content looks in your design system. As you re-size the window to greater widths, identify where your content hits a point where it could adapt to take advantage of a wider width.
+    Write media queries' widths in ems, not pixels. This ensures the layout will adapt to font size changes in addition to screen widths. To calculate the width in ems, divide the target breakpoint in pixels (320px) by 16px (the default font size) to get the em-based width (20em).
+    Use min-width breakpoints that build on top of the mobile styles. The first breakpoint applies layout adjustments on top of the standard mobile styles so these can be fairly lightweight. Additional min-width breakpoints can be added for even wider screens that each build on the previous breakpoint styles.
+    To override framework styles only for smaller screens, use a max-width breakpoint instead. This allows you to constrain your style overrides to only apply below a certain screen width. Above this width, all the normal styles will apply so this is good for certain types of overrides.</code>
+<code>创建一个样式重写样式表和包括它的jQuery Mobile框架样式表后。这会把你所有的自定义样式，修改默认的小工具和媒体查询。
+    开始写你想看到在狭窄的屏幕宽度的方式（即“移动第一”）。这些应该是外部媒体查询。这种移动第一种方法是有效的，因为你可以放下的核心印刷，颜色和风格的移动知道，这些往往也被用于更广泛的断点。
+    根据您的内容选择断点，而不是一个特定的设备。由于有每一个可以想象的宽度的设备，它是更聪明的选择基于您的内容如何在您的设计系统中的断点。当你重新大小的窗口，以更大的宽度，确定你的内容在哪里点击一个点，它可以适应利用更宽的宽度。
+    写媒体查询的宽度在环境中，而不是像素。这将确保布局将适应字体大小的变化，除了屏幕宽度。计算在EMS的宽度，将目标点的像素（320px）16px（默认字体大小）来获得基于EM的宽度（20em）。
+    使用在移动样式顶部上的最小宽度断点。第一个断点将布局调整应用在标准移动样式的顶部，这样它们可以很轻的。附加的最小宽度断点可以添加到更广泛的屏幕上，每个屏幕都建立在以前的断点样式上。
+    要覆盖框架样式只用于较小的屏幕，而不是使用最大宽度断点。这允许你限制你的风格覆盖只适用在一定的屏幕宽度。这上面的宽度，所有正常的方式将这是为某些类型的良好覆盖。</code>
+<h2>Putting it together</h2>
+<code>放在一起</code>
+<code>Here is a simple skeleton of a mobile-first stylesheet that starts with mobile-first styles, then builds up a responsive layout by adding two breakpoints:</code>
+<code>这里是一个简单的移动样式表开始移动第一风格的骨架，然后建立一个响应式布局加两个断点：</code>
+<code><small>* Start with core styles outside of a media query that apply to mobile and up */
+    /* Global typography and design elements, stacked containers */
+    body { font-family: Helvetica, san-serif; }
+    H1 { color: green; }
+    a:link { color:purple; }
+
+    /* Stack the two content containers */
+    .main,
+    .sidebar { display:block; width:100%; }
+
+    /* First breakpoint at 576px */
+    /* Inherits mobile styles, but floats containers to make columns */
+    @media all and (min-width: 36em){
+    .main { float: left; width:60%; }
+    .sidebar { float: left; width:40%; }
+    }
+
+    /* Second breakpoint at 800px */
+    /* Adjusts column proportions, tweaks base H1 */
+    @media all and (min-width: 50em){
+    .main { width:70%; }
+    .sidebar { width:30%; }
+
+    /* You can also tweak any other styles in a breakpoint */
+    H1 { color: blue; font-size:1.2em }
+    }</small></code>
+</body>
+</html>

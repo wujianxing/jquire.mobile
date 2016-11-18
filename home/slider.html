@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+    <link rel="stylesheet" href="../css/themes/default/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="../_assets/css/jqm-demos.css">
+    <script src="../js/jquery.js"></script>
+    <script src="../_assets/js/index.js"></script>
+    <script src="../js/jquery.mobile-1.4.5.min.js"></script>
+
+</head>
+<body>
+<form>
+        <div data-role="rangeslider" data-track-theme="b" data-theme="a">
+            <label for="range-3a">Rangeslider:</label>
+            <input type="range" name="range-3a" id="range-3a" min="0" max="100" value="20">
+            <label for="range-3b">Rangeslider:</label>
+            <input type="range" name="range-3b" id="range-3b" min="0" max="100" value="100">
+        </div>
+</form>
+<form>
+        <div data-role="rangeslider" data-highlight="false">
+            <label for="range-2a">Rangeslider (default is "true"):</label>
+            <input type="range" name="range-2a" id="range-2a" min="0" max="100" value="20">
+            <label for="range-2b">Rangeslider:</label>
+            <input type="range" name="range-2b" id="range-2b" min="0" max="100" value="80">
+        </div>
+</form>
+<form>
+        <div data-role="rangeslider">
+            <label for="range-5a">Rangeslider:</label>
+            <input type="range" name="range-5a" id="range-5a" disabled="disabled" min="0" max="100" value="0">
+            <label for="range-5b">Rangeslider:</label>
+            <input type="range" name="range-5b" id="range-5b" disabled="disabled" min="0" max="100" value="100">
+        </div>
+</form>
+</body>
+</html>
