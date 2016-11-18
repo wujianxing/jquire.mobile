@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+    <link rel="stylesheet" href="../css/themes/default/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="../_assets/css/jqm-demos.css">
+    <script src="../js/jquery.js"></script>
+    <script src="../_assets/js/index.js"></script>
+    <script src="../js/jquery.mobile-1.4.5.min.js"></script>
+    <script>
+        $( document ).on( "click", ".show-page-loading-msg", function() {
+            var $this = $( this ),
+                    theme = $this.jqmData( "theme" ) || $.mobile.loader.prototype.options.theme,
+                    msgText = $this.jqmData( "msgtext" ) || $.mobile.loader.prototype.options.text,
+                    textVisible = $this.jqmData( "textvisible" ) || $.mobile.loader.prototype.options.textVisible,
+                    textonly = !!$this.jqmData( "textonly" );
+            html = $this.jqmData( "html" ) || "";
+            $.mobile.loading( "show", {
+                text: msgText,
+                textVisible: textVisible,
+                theme: theme,
+                textonly: textonly,
+                html: html
+            });
+        })
+                .on( "click", ".hide-page-loading-msg", function() {
+                    $.mobile.loading( "hide" );
+                });
+    </script>
+
+</head>
+<body>
+<button class="show-page-loading-msg" data-textonly="false" data-textvisible="false" data-msgtext="" data-inline="true">Icon (default)</button>
+<button class="show-page-loading-msg" data-textonly="false" data-textvisible="true" data-msgtext="" data-inline="true">Icon + text</button>
+<button class="show-page-loading-msg" data-textonly="true" data-textvisible="true" data-msgtext="Text only loader" data-inline="true">Text only</button>
+<button class="hide-page-loading-msg" data-inline="true" data-icon="delete">Hide</button>
+
+<div data-role="navbar" data-grid="d">
+        <ul>
+            <li><a href="#" class="ui-btn-active">One</a></li>
+            <li><a href="#">Two</a></li>
+            <li><a href="#">Three</a></li>
+            <li><a href="#">Four</a></li>
+            <li><a href="#">Five</a></li>
+        </ul>
+</div><!-- /navbar -->
+</body>
+</html>

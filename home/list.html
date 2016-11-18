@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+    <link rel="stylesheet" href="../css/themes/default/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="../_assets/css/jqm-demos.css">
+    <script src="../js/jquery.js"></script>
+    <script src="../_assets/js/index.js"></script>
+    <script src="../js/jquery.mobile-1.4.5.min.js"></script>
+
+</head>
+<body>
+<code>listview  ul无排序</code>
+<ul data-role="listview">
+        <li>Acura</li>
+        <li>Audi</li>
+        <li>BMW</li>
+        <li>Cadillac</li>
+        <li>Ferrari</li>
+</ul>
+<code>listview  ol无排序</code>
+<ol data-role="listview">
+        <li>Acura</li>
+        <li>Audi</li>
+        <li>BMW</li>
+        <li>Cadillac</li>
+        <li>Ferrari</li>
+</ol>
+<ul data-role="listview" data-filter="true" data-filter-placeholder="Search fruits..." data-inset="true">
+        <li><a href="#">Apple</a></li>
+        <li><a href="#">Banana</a></li>
+        <li><a href="#">Cherry</a></li>
+        <li><a href="#">Cranberry</a></li>
+        <li><a href="#">Grape</a></li>
+        <li><a href="#">Orange</a></li>
+</ul>
+<form class="ui-filterable">
+        <input id="autocomplete-input" data-type="search" placeholder="Search fruits...">
+</form>
+<ul data-role="listview" data-filter="true" data-filter-reveal="true" data-input="#autocomplete-input" data-inset="true">
+        <li><a href="#">Apple</a></li>
+        <li><a href="#">Banana</a></li>
+        <li><a href="#">Cherry</a></li>
+        <li><a href="#">Cranberry</a></li>
+        <li><a href="#">Grape</a></li>
+        <li><a href="#">Orange</a></li>
+</ul>
+<ul data-role="listview" data-inset="true" data-divider-theme="a">
+        <li data-role="list-divider">Mail</li>
+        <li><a href="#">Inbox</a></li>
+        <li><a href="#">Outbox</a></li>
+        <li data-role="list-divider">Contacts</li>
+        <li><a href="#">Friends</a></li>
+        <li><a href="#">Work</a></li>
+</ul>
+<code> 自动分组 data-autodividers="true" data-filter="true"</code>
+<ul data-role="listview" data-autodividers="true" data-filter="true" data-inset="true">
+        <li><a href="index.html">Adam Kinkaid</a></li>
+        <li><a href="index.html">Alex Wickerham</a></li>
+        <li><a href="index.html">Avery Johnson</a></li>
+        <li><a href="index.html">Bob Cabot</a></li>
+        <li><a href="index.html">Caleb Booth</a></li>
+        <li><a href="index.html">Christopher Adams</a></li>
+        <li><a href="index.html">Culver James</a></li>
+</ul>
+<code>listview 里面嵌套span</code>
+<ul data-role="listview" data-count-theme="b" data-inset="true">
+        <li><a href="#">Inbox <span class="ui-li-count">12</span></a></li>
+        <li><a href="#">Outbox <span class="ui-li-count">0</span></a></li>
+        <li><a href="#">Drafts <span class="ui-li-count">4</span></a></li>
+        <li><a href="#">Sent <span class="ui-li-count">328</span></a></li>
+        <li><a href="#">Trash <span class="ui-li-count">62</span></a></li>
+</ul>
+<ul data-role="listview" data-inset="true">
+        <li><a href="#">
+            <img src="../_assets/img/album-bb.jpg">
+        <h2>Broken Bells</h2>
+        <p>Broken Bells</p></a>
+        </li>
+        <li><a href="#">
+            <img src="../_assets/img/album-hc.jpg">
+        <h2>Warning</h2>
+        <p>Hot Chip</p></a>
+        </li>
+        <li><a href="#">
+            <img src="../_assets/img/album-p.jpg">
+        <h2>Wolfgang Amadeus Phoenix</h2>
+        <p>Phoenix</p></a>
+        </li>
+</ul>
+
+</body>
+
+</html>
